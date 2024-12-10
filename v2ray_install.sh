@@ -9,7 +9,7 @@ echo "正在更新 geoip.dat 和 geosite.dat..."
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
 
 # 读取用户输入
-read -p "请输入访问端口 (建议使用 443): " port
+read -p "请输入代理端口: " port
 read -p "请输入 UUID: " uuid
 read -p "请输入伪装路径: " ws_path
 read -p "请输入伪装域名: " domain
