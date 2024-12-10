@@ -9,8 +9,8 @@ echo "正在更新 geoip.dat 和 geosite.dat..."
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
 
 # 读取用户输入
-read -p "请输入代理端口: " port
-read -p "请输入 UUID: " uuid
+read -p "请输入访问端口 (建议使用 443): " port
+read -p "请输入 uuid: " uuid
 read -p "请输入伪装路径: " ws_path
 read -p "请输入伪装域名: " domain
 
@@ -91,21 +91,21 @@ bash <(curl -L https://raw.githubusercontent.com/rzyao/shell/main/bbr.sh)
 # 生成分享链接
 share_link=$(cat <<EOL
 {
-    "v": "2",
-    "ps": "V2Ray 配置分享",
-    "add": "$domain",
-    "port": "443",
-    "id": "$uuid",
-    "aid": "100",
-    "scy": "auto",
-    "net": "ws",
-    "type": "none",
-    "host": "$domain",
-    "path": "$ws_path",
+    "port": 443,
+    "ps": "v2ray",
     "tls": "tls",
-    "sni": "",
-    "alpn": "h2",
-    "fp": "chrome"
+    "id": "$uuid",
+    "aid": 0,
+    "v": 2,
+    "host": "$domain",
+    "type": "none",
+    "path": "$ws_path",
+    "net": "ws",
+    "add": "$domain",
+    "allowInsecure": 0,
+    "method": "none",
+    "peer": "$domain",
+    "sni": "$domain"
 }
 EOL
 )
