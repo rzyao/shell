@@ -82,7 +82,7 @@ systemctl enable v2ray
 
 # 测试 V2Ray 配置
 echo "正在测试 V2Ray 配置..."
-v2ray -test -config /usr/local/etc/v2ray/config.json
+v2ray test -config /usr/local/etc/v2ray/config.json
 
 # 开启 BBR 加速
 echo "正在开启 BBR 加速..."
